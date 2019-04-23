@@ -15,18 +15,15 @@ app.use(function(req, res, next) {
 
 app.use(express.static('public'));
 
-app.get('/long-running-task',(req, res) => setTimeout(function () {
+var timeout = Math.floor(Math.random() * (35 - 5) + 5)
+app.get('/long-running-task-1',(req, res) => setTimeout(function () {
   console.log(req.params)
   var data = {
     name: "book1",
     author: "author1"
   }     
   res.send(JSON.stringify(data));
-}, 30000))
-
-app.get('/long-running-task-1',(req, res) => setTimeout(function () {
-  console.log(req.params)  
-}, 3000))
+}, timeout))
 
 app.get('/long-running-task-2',(req, res) => setTimeout(function () {
   console.log(req.params)
@@ -35,7 +32,7 @@ app.get('/long-running-task-2',(req, res) => setTimeout(function () {
     author: "author1"
   }     
   res.send(JSON.stringify(data));
-}, 15000))
+}, timeout))
 
 app.get('/long-running-task-3',(req, res) => setTimeout(function () {
   console.log(req.params)
@@ -44,7 +41,7 @@ app.get('/long-running-task-3',(req, res) => setTimeout(function () {
     author: "author1"
   }     
   res.send(JSON.stringify(data));
-}, 10000))
+}, timeout))
 
 app.get('/long-running-task-4',(req, res) => setTimeout(function () {
   console.log(req.params)
@@ -53,9 +50,13 @@ app.get('/long-running-task-4',(req, res) => setTimeout(function () {
     author: "author1"
   }     
   res.send(JSON.stringify(data));
-}, 5000))
+}, timeout))
 
 app.get('/long-running-task-5',(req, res) => setTimeout(function () {
+  console.log(req.params)  
+}, 3000))
+
+app.get('/long-running-task-6',(req, res) => setTimeout(function () {
   console.log(req.params)
   var data = {
     name: "book1",
