@@ -35,6 +35,33 @@ app.get('/long-running-task-2',(req, res) => setTimeout(function () {
     author: "author1"
   }     
   res.send(JSON.stringify(data));
+}, 15000))
+
+app.get('/long-running-task-3',(req, res) => setTimeout(function () {
+  console.log(req.params)
+  var data = {
+    name: "book1",
+    author: "author1"
+  }     
+  res.send(JSON.stringify(data));
+}, 10000))
+
+app.get('/long-running-task-4',(req, res) => setTimeout(function () {
+  console.log(req.params)
+  var data = {
+    name: "book1",
+    author: "author1"
+  }     
+  res.send(JSON.stringify(data));
+}, 5000))
+
+app.get('/long-running-task-5',(req, res) => setTimeout(function () {
+  console.log(req.params)
+  var data = {
+    name: "book1",
+    author: "author1"
+  }     
+  res.send(JSON.stringify(data));
 }, 2000))
 
 app.get('/sample', function(req ,res) {
