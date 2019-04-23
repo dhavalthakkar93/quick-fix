@@ -9,11 +9,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['My Application'],
+  app_name: ['app-assessment-demo'],
   /**
    * Your New Relic license key.
    */
-  license_key: 'license key here',
+  license_key: '26adcc9f1871ce3bb99860a21af2aae96c02a080',
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing

@@ -15,6 +15,27 @@ app.use(function(req, res, next) {
 
 app.use(express.static('public'));
 
+app.get('/long-running-task',(req, res) => setTimeout(function () {
+  console.log('boo')
+}, 30000))
+
+app.get('/long-running-task-1',(req, res) => setTimeout(function () {
+  console.log('boo')
+}, 3000))
+
+app.get('/long-running-task-2',(req, res) => setTimeout(function () {
+  console.log('boo')
+}, 2000))
+
+app.get('/sample', function(req ,res) {
+  console.log(req.params)
+  var data = {
+    name: "book1",
+    author: "author1"
+  }     
+  res.send(JSON.stringify(data));
+})
+
 var server = app.listen(PORT, function () {
   var host = server.address().address;
   var port = server.address().port;
